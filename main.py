@@ -7,9 +7,6 @@ app = FastAPI()
 async def verify(request: Request):
     # Verifica el token de verificación
 
-    if request.query_params.get("hub.challenge") != "1123965421":
-        return Response(content="El desafío no es correcto", status_code=403)
-
     if request.query_params.get("hub.verify_token") != "wh":
         return Response(content="El token de verificación no es correcto", status_code=403)
 
