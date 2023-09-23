@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Request
-
+from fastapi.responses import Response
 
 app = FastAPI()
 
 @app.get("/webhooks")
-async def verify():
+async def verify(request: Request):
     # Verifica el token de verificación
 
     if request.query_params.get("hub.challenge") != "1158201444":
