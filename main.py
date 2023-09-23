@@ -1,7 +1,8 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI 
+import Request
 
 
-app = fastapi.FastAPI()
+app = FastAPI()
 
 @app.get("/webhooks")
 async def verify():
